@@ -72,5 +72,3 @@ http.createServer(dataControl).listen(2400);
 // const colors = require("colors");
 // console.log("hello".red);
 // console.log("hello".bgBlue)
-
-// update
