@@ -66,6 +66,8 @@ function dataControl(req, resp) {
   resp.end();
 }
 http.createServer(dataControl).listen(2400);
-
-// package.json//
-
+*/
+// package json
+const colors = require("colors");
+console.log("hello".red);
+console.log("hello".bgBlue);
