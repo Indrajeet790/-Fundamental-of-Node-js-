@@ -72,3 +72,28 @@ http.createServer(dataControl).listen(2400);
 // const colors = require("colors");
 // console.log("hello".red);
 // console.log("hello".bgBlue)
+
+// Nodemon package
+// why nodemon is used:-nodemon is very essential tool for saving time during of program executing.
+// console.warn("Try Nodemon");
+// console.warn(" why r u crying");
+
+/*
+//input from Command Line
+// add file
+// delete file
+// console.log(process.argv);
+// console.log(process.argv[3]);
+
+const fs = require("fs");
+
+const input = process.argv;
+
+if (input[2] == "add") {
+  fs.writeFileSync(input[3], input[4]);
+} else if (input[2] == "remove") {
+  fs.unlinkSync(input[3]);
+} else {
+  console.log("invalid input");
+}
+*/
