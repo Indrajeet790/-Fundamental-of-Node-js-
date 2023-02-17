@@ -1,3 +1,4 @@
+// Get api
 const express = require("express");
 const dbConnect = require("./commonmongoDB.js");
 const app = express();
