@@ -1,4 +1,4 @@
-/*
+/*curd operation  mongoose
 1.create
 2.update record
 3.delete record
@@ -6,7 +6,7 @@
 
 */
 const express = require("express");
-const { MongoKerberosError } = require("mongodb");
+const { MongoClient } = require("mongodb");
 const mongoose = require("mongoose");
 const app = express();
 

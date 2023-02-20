@@ -52,7 +52,7 @@ const main = async () => {
 main();
 */
 const express = require("express");
-const { MongoKerberosError } = require("mongodb");
+const { MongoClient } = require("mongodb");
 const mongoose = require("mongoose");
 const app = express();
 
