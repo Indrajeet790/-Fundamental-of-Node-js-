@@ -19,4 +19,29 @@ app.post("/create", async (req, resp) => {
   resp.send(result);
 });
 
+// Get method API
+app.get("/list", async (req, resp) => {
+  let data = await smartPhones.find();
+  resp.send(data);
+});
+// delete API
+app.delete("/delete/:_id", async (req, resp) => {
+  console.log(req.params);
+  let data = await smartPhones.deleteOne(req.params);
+  resp.send(data);
+});
+// put (update) API
+app.put("/update/:_id", async (req, resp) => {
+  console.log(req.params);
+  let data = await smartPhones.updateOne(
+    req.params,
+    //condition
+    {
+      $set: req.body,
+      // $set:{updated date}
+    }
+  );
+  resp.send(data);
+});
+
 app.listen(3500);
