@@ -71,10 +71,10 @@ const main = async () => {
       console.log(e);
     });
 
-  const productSchema = new mongoose.Schema({ name: String });
+  const productSchema = new mongoose.Schema({ name: String, price: Number });
 
   const productModel = mongoose.model("products ", productSchema);
-  let data = new productModel({ name: "vijay50" });
+  let data = new productModel({ name: "vijay50", price: 500 });
   let result = await data.save();
   console.log(result);
 };
