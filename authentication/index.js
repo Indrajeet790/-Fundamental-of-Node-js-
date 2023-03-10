@@ -22,6 +22,37 @@ app.post("/login", (req, resp) => {
     });
   });
 });
+// here we can verify our token
+app.post("/profile", verifyToken, (req, resp) => {
+  jwt.verify(req.token, secretKey, (err, authData) => {
+    if (err) {
+      resp.send({ result: "Invalid token" });
+    } else {
+      resp.json({
+        message: "profile accessed",
+        authData,
+      });
+    }
+  });
+});
+
+// for verify token
+// here we found token
+function verifyToken(req, resp, next) {
+  const bearerHeader = req.headers["authorization"];
+  // checked undefined or not
+
+  if (typeof bearerHeader != "undefined") {
+    const bearer = bearerHeader.split(" ");
+    const token = bearer[1];
+    req.token = token;
+    next();
+  } else {
+    resp.send({
+      result: "Token is not valid",
+    });
+  }
+}
 
 app.listen(port, (err) => {
   if (err) {
